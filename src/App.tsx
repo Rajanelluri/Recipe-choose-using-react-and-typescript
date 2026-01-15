@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import recipes from "./data";
-import { Recipe } from "./types";
+import type { Recipe } from "./types";
+
 
 import RecipeList from "./components/RecipeList";
 import Favorites from "./components/Favorites";

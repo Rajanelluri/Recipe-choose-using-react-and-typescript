@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Recipe } from ".,/types";
+import type { Recipe } from "../types";
+
 
 interface RecipeCardProps {
   recipe: Recipe;
