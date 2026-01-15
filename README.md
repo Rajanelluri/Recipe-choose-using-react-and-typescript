@@ -1,77 +1,80 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# Recipe Book (React + TypeScript)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Recipe Book web app built with **React**, **TypeScript**, and **React Router**.  
+It displays recipes, supports search, lets users add/remove favorites, and shows recipe details.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **Home page (`/`)**
+  - Displays all recipes from `src/data.ts`
+  - **Search** recipes by name (case-insensitive)
+  - If no match: shows **"No recipes match your search."**
+- **Favorites page (`/favorites`)**
+  - Shows only favorited recipes
+  - If none: shows **"No favorites yet!"**
+- **Recipe details (`/recipe/:id`)**
+  - Shows recipe name, ingredients, and instructions
+  - Back to recipes link
+- **Favorite toggle**
+  - Button switches between **Add to Favorites** / **Remove from Favorites**
+  - Works on both Home and Favorites pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- React Router
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Project Structure
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```txt
+recipe-book/
+├─ index.html
+├─ package.json
+├─ vite.config.ts
+└─ src/
+   ├─ main.tsx
+   ├─ App.tsx
+   ├─ data.ts
+   ├─ types.ts
+   └─ components/
+      ├─ RecipeList.tsx
+      ├─ RecipeCard.tsx
+      ├─ Favorites.tsx
+      └─ RecipeDetails.tsx
+Routes
+Route	Page
+/	Home (all recipes + search)
+/favorites	Favorites list
+/recipe/:id	Recipe details
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Getting Started (Local Setup)
+1) Clone the repo
+bash
+Copy code
+git clone <your-repo-url>
+cd recipe-book
+2) Install dependencies
+bash
+Copy code
+npm install
+3) Run in development mode
+bash
+Copy code
+npm run dev
+Open the URL shown in the terminal (usually):
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-=======
-# Recipe-choose-using-react-and-typescript
->>>>>>> c18dbfdcd269705585c2728eaea3f8ae3ba6705f
+http://localhost:5173
+output images:
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/505bd399-0198-4f7d-af28-c0b33ab9c059" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/c2d708d0-99dd-4c89-a83c-1450101da025" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/89640494-6773-4b5c-a3fb-c23100e9e9eb" />
+search filter:
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/0c1d19f3-07b5-498e-bce7-05f8faa06fe3" />
