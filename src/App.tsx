@@ -3,10 +3,12 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import recipes from "./data";
 import type { Recipe } from "./types";
 
-
 import RecipeList from "./components/RecipeList";
 import Favorites from "./components/Favorites";
 import RecipeDetails from "./components/RecipeDetails";
+
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const App: React.FC = () => {
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
@@ -26,6 +28,8 @@ const App: React.FC = () => {
         <div className="layout-row align-items-center" style={{ gap: 16 }}>
           <Link to="/">Home</Link>
           <Link to="/favorites">Favorites</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Sign Up</Link>
         </div>
       </nav>
 
@@ -39,6 +43,9 @@ const App: React.FC = () => {
           element={<Favorites favorites={favoriteRecipes} favoriteIds={favoriteIds} onToggleFavorite={toggleFavorite} />}
         />
         <Route path="/recipe/:id" element={<RecipeDetails />} />
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
   );
