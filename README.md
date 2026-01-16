@@ -57,7 +57,6 @@ Route	Page
 
 Getting Started (Local Setup)
 1) Clone the repo
-bash
 Copy code
 git clone <your-repo-url>
 cd recipe-book
